@@ -6,7 +6,6 @@ import fenics as fn
 import mshr
 from ufl import grad, dot, dx, ds, Max, Min
 import numpy as np
-import matplotlib.pyplot as plt
 from math import pi, cos, sin, sqrt
 
 def to_rad(deg):
@@ -23,7 +22,7 @@ global_normal = fn.Expression(("x[0]", "x[1]", "x[2]"), degree=1)
 mesh.init_cell_orientations(global_normal)
 
 # Time stepping parameters
-T = 1.0e6 
+T = 1.0e6
 num_steps = 400
 dt = T / num_steps
 k = fn.Constant(dt)
